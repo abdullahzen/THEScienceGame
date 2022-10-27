@@ -1,0 +1,14 @@
+on:
+  pull_request:
+    branches:
+    - main
+jobs:
+  build:
+    name: Build the project
+    runs-on: ubuntu-22.4
+    steps:
+      - name: Unity - Builder
+        uses: game-ci/unity-builder@v2.1.2
+        with:
+          targetPlatform: StandaloneWindows
+          unityVersion: auto
