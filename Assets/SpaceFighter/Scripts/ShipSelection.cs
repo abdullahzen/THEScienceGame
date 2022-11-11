@@ -7,11 +7,13 @@ public class ShipSelection : MonoBehaviour
 {
     [SerializeField] private Button previousButton;
     [SerializeField] private Button nextButton;
+    private Animator shipAnimator;
     private int currentShip;
 
     private void Awake()
     {
         SelectShip(0);
+        shipAnimator = GameObject.Find("warhead_LOD2").gameObject.GetComponent<Animator>();
     }
 
     private void SelectShip(int _index)
@@ -28,5 +30,10 @@ public class ShipSelection : MonoBehaviour
     {
         currentShip += _change;
         SelectShip(currentShip);
+    }
+
+    public void PlayShipAnimation(){
+        shipAnimator.enabled = true;
+        shipAnimator.Play("ShipLaunchAnim");
     }
 }
