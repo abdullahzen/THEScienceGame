@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ShipAnimation : MonoBehaviour
 {
@@ -20,5 +21,10 @@ public class ShipAnimation : MonoBehaviour
     private void OnDisable()
     {
         transform.position = initialPosition;
+    }
+
+    private void GoToNextPlanet(){
+        SceneManager.LoadScene("moleculeMiniGame");
+        SceneManager.UnloadSceneAsync("ShipChosing");
     }
 }

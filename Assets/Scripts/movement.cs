@@ -7,7 +7,7 @@ public class movement : MonoBehaviour
 {
 
     public Rigidbody rb;
-    float speed = 0.05f;
+    float speed = 0.5f;
     private float x;
      private float y;
      private Vector3 rotateValue;

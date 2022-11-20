@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using System.Threading;
 
 public class submitButton : MonoBehaviour
 {
@@ -49,6 +51,9 @@ public class submitButton : MonoBehaviour
         if(isLost == false)
         {
             Debug.Log("you won");
+            Thread.Sleep(2000);
+            SceneManager.LoadScene("MainScene");
+            SceneManager.UnloadSceneAsync("moleculeMiniGame");
         }
     }
 }
