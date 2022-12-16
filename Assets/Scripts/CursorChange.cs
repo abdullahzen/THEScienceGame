@@ -1,25 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CursorChange : MonoBehaviour
 {
+   
     [SerializeField]
-    private Texture2D cursor;
-    [SerializeField]
-    private TextAsset imageAsset;
-    // Start is called before the first frame update
-    void Start()
-    {
-        Texture2D tex = new Texture2D(2, 2);
-        tex.LoadImage(imageAsset.bytes);
-        Cursor.SetCursor(cursor, Vector2.zero, CursorMode.Auto);
+    private GameObject cursor;
+
+    // Use this for initialization
+    void Start () {
+        Cursor.visible = false;
     }
-
-
-    // Update is called once per frame
+   
+    
+    //raw image following the mouse
     void Update()
     {
         
+        cursor.transform.position = Input.mousePosition;
     }
 }

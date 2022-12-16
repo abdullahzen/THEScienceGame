@@ -1,6 +1,6 @@
-using System.Security.Cryptography.X509Certificates;
-using System.Runtime.CompilerServices;
-using System.Security.AccessControl;
+
+
+
 using System;
 using System.Drawing;
 using System.Collections;
@@ -11,6 +11,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Data;
 using Mono.Data.Sqlite;
+
 
 public class MultipleChoiceController : MonoBehaviour
 {
@@ -33,27 +34,46 @@ public class MultipleChoiceController : MonoBehaviour
 
     [SerializeField] private GameObject resultCanvas;
     [SerializeField] private GameObject resultText;
+    
 
     private ArrayList Questions = new ArrayList();
     private ArrayList RightAnswers = new ArrayList();
     private ArrayList WrongAnswers1 = new ArrayList(); 
     private ArrayList WrongAnswers2 = new ArrayList();
     private ArrayList WrongAnswers3 = new ArrayList();   
+    private ArrayList difficulties = new ArrayList();
+    
+    
+
 
     private int previousQuestion = 0;
-
+    
+    [SerializeField]
+    private GameObject dbObj;
+    MultipleChoiceModel db;
 // Start is called before the first frame update
     void Start()
     {
 
         
+        db = dbObj.GetComponent<MultipleChoiceModel>();
         // QuestionModel model = new QuestionModel();
         // model.CreateAndOpenDatabase();
-        IDbConnection con = CreateAndOpenDatabase();
+        IDbConnection con = db.CreateAndOpenDatabase();
     
         
 
-        ReadData(con);
+        IDataReader reader = db.ReadData(con);
+        while (reader.Read()) // 17
+        {
+            Questions.Add(reader.GetString(1));
+            RightAnswers.Add(reader.GetString(2));
+            WrongAnswers1.Add(reader.GetString(3));
+            WrongAnswers2.Add(reader.GetString(4));
+            WrongAnswers3.Add(reader.GetString(5));
+            difficulties.Add(reader.GetInt32(6));
+            Debug.Log("Question: " + reader.GetString(1) + " Right Answer: " + reader.GetString(2) + " Wrong Answer 1: " + reader.GetString(3) + " Wrong Answer 2: " + reader.GetString(4) + " Wrong Answer 3: " + reader.GetString(5) + " Difficulty: " + reader.GetInt32(6));
+        }
         
         
         //---------------------------------//
