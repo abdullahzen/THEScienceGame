@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &75360139 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7277439066958994550, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+  m_PrefabInstance: {fileID: 939875087}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &91973387
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -232,7 +243,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3978250748764798316, guid: f7314852aa2494544978fdfad95bf370, type: 3}
       propertyPath: m_Name
-      value: atomPrefab (3)
+      value: Oxygen
+      objectReference: {fileID: 0}
+    - target: {fileID: 3978250748764798316, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7277439066958994550, guid: f7314852aa2494544978fdfad95bf370, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -250,6 +265,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: oxygen
       objectReference: {fileID: 0}
+    - target: {fileID: 7647088996247705200, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+      propertyPath: submit
+      value: 
+      objectReference: {fileID: 198031335}
+    - target: {fileID: 7647088996247705200, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+      propertyPath: atomButton
+      value: 
+      objectReference: {fileID: 1215807603}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7314852aa2494544978fdfad95bf370, type: 3}
 --- !u!224 &91973388 stripped
@@ -366,7 +389,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3978250748764798316, guid: f7314852aa2494544978fdfad95bf370, type: 3}
       propertyPath: m_Name
-      value: atomPrefab (6)
+      value: Nitrogen
+      objectReference: {fileID: 0}
+    - target: {fileID: 3978250748764798316, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7277439066958994550, guid: f7314852aa2494544978fdfad95bf370, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -384,6 +411,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: nitrogen
       objectReference: {fileID: 0}
+    - target: {fileID: 7647088996247705200, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+      propertyPath: submit
+      value: 
+      objectReference: {fileID: 198031335}
+    - target: {fileID: 7647088996247705200, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+      propertyPath: atomButton
+      value: 
+      objectReference: {fileID: 1582680322}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7314852aa2494544978fdfad95bf370, type: 3}
 --- !u!224 &135165405 stripped
@@ -484,7 +519,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3978250748764798316, guid: f7314852aa2494544978fdfad95bf370, type: 3}
       propertyPath: m_Name
-      value: atomPrefab
+      value: Hydrogen
+      objectReference: {fileID: 0}
+    - target: {fileID: 3978250748764798316, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7277439066958994550, guid: f7314852aa2494544978fdfad95bf370, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -502,6 +541,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: hydrogen
       objectReference: {fileID: 0}
+    - target: {fileID: 7647088996247705200, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+      propertyPath: submit
+      value: 
+      objectReference: {fileID: 198031335}
+    - target: {fileID: 7647088996247705200, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+      propertyPath: atomButton
+      value: 
+      objectReference: {fileID: 1337129736}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7314852aa2494544978fdfad95bf370, type: 3}
 --- !u!224 &137550419 stripped
@@ -764,7 +811,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3978250748764798316, guid: f7314852aa2494544978fdfad95bf370, type: 3}
       propertyPath: m_Name
-      value: atomPrefab (9)
+      value: Carbon
+      objectReference: {fileID: 0}
+    - target: {fileID: 3978250748764798316, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7277439066958994550, guid: f7314852aa2494544978fdfad95bf370, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -782,6 +833,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: carbon
       objectReference: {fileID: 0}
+    - target: {fileID: 7647088996247705200, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+      propertyPath: submit
+      value: 
+      objectReference: {fileID: 198031335}
+    - target: {fileID: 7647088996247705200, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+      propertyPath: atomButton
+      value: 
+      objectReference: {fileID: 1611527578}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7314852aa2494544978fdfad95bf370, type: 3}
 --- !u!224 &275355465 stripped
@@ -868,6 +927,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 307832093}
   m_CullTransparentMesh: 1
+--- !u!114 &389610414 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7277439066958994550, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+  m_PrefabInstance: {fileID: 2053318637}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &433617381 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7277439066958994550, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+  m_PrefabInstance: {fileID: 1164444879}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &559298708
 GameObject:
   m_ObjectHideFlags: 0
@@ -947,6 +1028,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 559298708}
   m_CullTransparentMesh: 1
+--- !u!114 &703465720 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7277439066958994550, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+  m_PrefabInstance: {fileID: 958065645}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &775785194
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1056,7 +1148,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3978250748764798316, guid: f7314852aa2494544978fdfad95bf370, type: 3}
       propertyPath: m_Name
-      value: atomPrefab (1)
+      value: Oxygen
+      objectReference: {fileID: 0}
+    - target: {fileID: 3978250748764798316, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7277439066958994550, guid: f7314852aa2494544978fdfad95bf370, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1074,6 +1170,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: oxygen
       objectReference: {fileID: 0}
+    - target: {fileID: 7647088996247705200, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+      propertyPath: submit
+      value: 
+      objectReference: {fileID: 198031335}
+    - target: {fileID: 7647088996247705200, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+      propertyPath: atomButton
+      value: 
+      objectReference: {fileID: 1422976182}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7314852aa2494544978fdfad95bf370, type: 3}
 --- !u!224 &775785195 stripped
@@ -1190,7 +1294,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3978250748764798316, guid: f7314852aa2494544978fdfad95bf370, type: 3}
       propertyPath: m_Name
-      value: atomPrefab (5)
+      value: Oxygen
+      objectReference: {fileID: 0}
+    - target: {fileID: 3978250748764798316, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7277439066958994550, guid: f7314852aa2494544978fdfad95bf370, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1208,6 +1316,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: oxygen
       objectReference: {fileID: 0}
+    - target: {fileID: 7647088996247705200, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+      propertyPath: submit
+      value: 
+      objectReference: {fileID: 198031335}
+    - target: {fileID: 7647088996247705200, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+      propertyPath: atomButton
+      value: 
+      objectReference: {fileID: 899755452}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7314852aa2494544978fdfad95bf370, type: 3}
 --- !u!224 &872715120 stripped
@@ -1215,6 +1331,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2090582390727741924, guid: f7314852aa2494544978fdfad95bf370, type: 3}
   m_PrefabInstance: {fileID: 872715119}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &899755452 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7277439066958994550, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+  m_PrefabInstance: {fileID: 872715119}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &937396147
 GameObject:
   m_ObjectHideFlags: 0
@@ -1417,7 +1544,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3978250748764798316, guid: f7314852aa2494544978fdfad95bf370, type: 3}
       propertyPath: m_Name
-      value: atomPrefab (7)
+      value: Nitrogen
+      objectReference: {fileID: 0}
+    - target: {fileID: 3978250748764798316, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7277439066958994550, guid: f7314852aa2494544978fdfad95bf370, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1435,6 +1566,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: nitrogen
       objectReference: {fileID: 0}
+    - target: {fileID: 7647088996247705200, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+      propertyPath: submit
+      value: 
+      objectReference: {fileID: 198031335}
+    - target: {fileID: 7647088996247705200, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+      propertyPath: atomButton
+      value: 
+      objectReference: {fileID: 75360139}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7314852aa2494544978fdfad95bf370, type: 3}
 --- !u!224 &939875088 stripped
@@ -1551,7 +1690,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3978250748764798316, guid: f7314852aa2494544978fdfad95bf370, type: 3}
       propertyPath: m_Name
-      value: atomPrefab (10)
+      value: Sulfur
+      objectReference: {fileID: 0}
+    - target: {fileID: 3978250748764798316, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7277439066958994550, guid: f7314852aa2494544978fdfad95bf370, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1569,6 +1712,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: sulfur
       objectReference: {fileID: 0}
+    - target: {fileID: 7647088996247705200, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+      propertyPath: submit
+      value: 
+      objectReference: {fileID: 198031335}
+    - target: {fileID: 7647088996247705200, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+      propertyPath: atomButton
+      value: 
+      objectReference: {fileID: 703465720}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7314852aa2494544978fdfad95bf370, type: 3}
 --- !u!224 &958065646 stripped
@@ -1685,7 +1836,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3978250748764798316, guid: f7314852aa2494544978fdfad95bf370, type: 3}
       propertyPath: m_Name
-      value: atomPrefab (2)
+      value: Oxygen
+      objectReference: {fileID: 0}
+    - target: {fileID: 3978250748764798316, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7277439066958994550, guid: f7314852aa2494544978fdfad95bf370, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1703,6 +1858,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: oxygen
       objectReference: {fileID: 0}
+    - target: {fileID: 7647088996247705200, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+      propertyPath: submit
+      value: 
+      objectReference: {fileID: 198031335}
+    - target: {fileID: 7647088996247705200, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+      propertyPath: atomButton
+      value: 
+      objectReference: {fileID: 433617381}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7314852aa2494544978fdfad95bf370, type: 3}
 --- !u!224 &1164444880 stripped
@@ -1710,6 +1873,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2090582390727741924, guid: f7314852aa2494544978fdfad95bf370, type: 3}
   m_PrefabInstance: {fileID: 1164444879}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1215807603 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7277439066958994550, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+  m_PrefabInstance: {fileID: 91973387}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1247072763 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2090582390727741924, guid: f7314852aa2494544978fdfad95bf370, type: 3}
@@ -1824,7 +1998,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3978250748764798316, guid: f7314852aa2494544978fdfad95bf370, type: 3}
       propertyPath: m_Name
-      value: atomPrefab (8)
+      value: Carbon
+      objectReference: {fileID: 0}
+    - target: {fileID: 3978250748764798316, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7277439066958994550, guid: f7314852aa2494544978fdfad95bf370, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1842,6 +2020,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: carbon
       objectReference: {fileID: 0}
+    - target: {fileID: 7647088996247705200, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+      propertyPath: submit
+      value: 
+      objectReference: {fileID: 198031335}
+    - target: {fileID: 7647088996247705200, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+      propertyPath: atomButton
+      value: 
+      objectReference: {fileID: 1589443280}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7314852aa2494544978fdfad95bf370, type: 3}
 --- !u!224 &1301342928 stripped
@@ -1849,6 +2035,28 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2090582390727741924, guid: f7314852aa2494544978fdfad95bf370, type: 3}
   m_PrefabInstance: {fileID: 1301342927}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1337129736 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7277439066958994550, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+  m_PrefabInstance: {fileID: 137550418}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1422976182 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7277439066958994550, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+  m_PrefabInstance: {fileID: 775785194}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1481827997
 GameObject:
   m_ObjectHideFlags: 0
@@ -1932,6 +2140,50 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1582680322 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7277439066958994550, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+  m_PrefabInstance: {fileID: 135165404}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1589443280 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7277439066958994550, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+  m_PrefabInstance: {fileID: 1301342927}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1611527578 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7277439066958994550, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+  m_PrefabInstance: {fileID: 275355464}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1657316771 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7277439066958994550, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+  m_PrefabInstance: {fileID: 7277439067937099146}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1670390004
 GameObject:
   m_ObjectHideFlags: 0
@@ -2121,7 +2373,6 @@ GameObject:
   - component: {fileID: 1885677450}
   - component: {fileID: 1885677452}
   - component: {fileID: 1885677451}
-  - component: {fileID: 1885677453}
   m_Layer: 5
   m_Name: atomsPanel
   m_TagString: atomPanel
@@ -2198,18 +2449,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1885677449}
   m_CullTransparentMesh: 1
---- !u!114 &1885677453
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1885677449}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c1f60587a64df048a2343214ea82bdb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1903482672
 GameObject:
   m_ObjectHideFlags: 0
@@ -2385,7 +2624,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3978250748764798316, guid: f7314852aa2494544978fdfad95bf370, type: 3}
       propertyPath: m_Name
-      value: atomPrefab (4)
+      value: Oxygen
+      objectReference: {fileID: 0}
+    - target: {fileID: 3978250748764798316, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7277439066958994550, guid: f7314852aa2494544978fdfad95bf370, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2403,6 +2646,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: oxygen
       objectReference: {fileID: 0}
+    - target: {fileID: 7647088996247705200, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+      propertyPath: submit
+      value: 
+      objectReference: {fileID: 198031335}
+    - target: {fileID: 7647088996247705200, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+      propertyPath: atomButton
+      value: 
+      objectReference: {fileID: 389610414}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7314852aa2494544978fdfad95bf370, type: 3}
 --- !u!224 &2053318638 stripped
@@ -2501,25 +2752,53 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3290719862164421783, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3978250748764798316, guid: f7314852aa2494544978fdfad95bf370, type: 3}
       propertyPath: m_Name
       value: Hydrogen
       objectReference: {fileID: 0}
+    - target: {fileID: 3978250748764798316, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277439066958994550, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277439066958994550, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7277439066958994550, guid: f7314852aa2494544978fdfad95bf370, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 198031335}
+      objectReference: {fileID: 11500000, guid: 03734f566a894524a9e44a356c3b5125, type: 3}
+    - target: {fileID: 7277439066958994550, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7277439066958994550, guid: f7314852aa2494544978fdfad95bf370, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: user
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7277439066958994550, guid: f7314852aa2494544978fdfad95bf370, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: submitButton, Assembly-CSharp
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7277439066958994550, guid: f7314852aa2494544978fdfad95bf370, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: hydrogen
+      value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7647088996247705200, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+      propertyPath: submit
+      value: 
+      objectReference: {fileID: 198031335}
+    - target: {fileID: 7647088996247705200, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+      propertyPath: atomButton
+      value: 
+      objectReference: {fileID: 1657316771}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7314852aa2494544978fdfad95bf370, type: 3}

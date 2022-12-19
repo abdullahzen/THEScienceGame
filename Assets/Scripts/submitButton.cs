@@ -4,51 +4,63 @@ using UnityEngine;
 
 public class submitButton : MonoBehaviour
 {
-    string[] userAnswer = new string[5];
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    List<string> userAnswer = new List<string>();
 
-    // Update is called once per frame
-    void Update()
+    //if remove parameter is true then we remove the atom from the list
+    //else we add it to the list
+    public void addOrRemoveAtom(string atom, bool remove)
     {
-        
-    }
-
-    public void user(string atom)
-    {
-        for (int i = 0; i < userAnswer.Length; i++)
+        if (remove)
         {
-            if (userAnswer[i] == null)
+            for (int i = 0; i < userAnswer.Count; i++)
             {
-                userAnswer[i] = atom;
-                break;
+                if (userAnswer[i] == atom)
+                {
+                    userAnswer.RemoveAt(i);
+                    break;
+                }
             }
         }
-
+        else
+        {
+            userAnswer.Add(atom);
+        }
     }
     public void checkAnswers()
     {
         bool isLost = false;
         List<string> answer = new List<string>()
         {
-             "hydrogen", "nitrogen", "oxygen", "oxygen", "oxygen"
+             "Hydrogen", "Nitrogen", "Oxygen", "Oxygen", "Oxygen"
         };
-        List<string> user = new List<string>(userAnswer);
-        user.Sort();
-        for (int i = 0; i < answer.Count; i++)
+        //List<string> user = new List<string>(userAnswer);
+        userAnswer.Sort();
+        /*foreach( var x in userAnswer)
         {
-            if (answer[i] != user[i])
+            Debug.Log(x);
+        }*/
+        if (answer.Count == userAnswer.Count)
+        {
+            for (int i = 0; i < answer.Count; i++)
             {
-                isLost = true;
-                Debug.Log("answer is incorrect");
+                if (answer[i] != userAnswer[i])
+                {
+                    isLost = true;
+                    Debug.Log("answer is incorrect");
+                }
             }
         }
+        else
+        {
+            isLost = true;
+            Debug.Log("answer is incorrect");
+        }
+        
         if(isLost == false)
         {
             Debug.Log("you won");
+            userAnswer.Clear();
+            //move on
         }
     }
 }
