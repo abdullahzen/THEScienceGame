@@ -25,18 +25,21 @@ public class atomPrefab : MonoBehaviour
         clickCount++;
         if (clickCount%2 == 0)
         {
+            gameObject.tag = "Clicked";
             submit.addOrRemoveAtom(atomButton.name, false);
             glow.glowOn();
         }
         else
         {
+            gameObject.tag = "Button";
             submit.addOrRemoveAtom(atomButton.name, true);
             glow.glowOff();
         }
         
     }
-    void Update()
+
+    void glowOffPrefab()
     {
-        
+        glow.glowOff();
     }
 }
