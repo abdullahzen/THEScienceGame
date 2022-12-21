@@ -20,7 +20,7 @@ public class ColorChange : MonoBehaviour
     [SerializeField]
     private Button bodyChange;
 
-    private int _i = 0;
+    private int _i = 99;
 
     // Use this for initialization
     void Start()
@@ -31,8 +31,11 @@ public class ColorChange : MonoBehaviour
 
         picker.onValueChanged.AddListener(color =>
         {
-            renderers[_i].material.color = color;
-            Color = color;
+            if (_i != 99)
+            {
+                renderers[_i].sharedMaterial.SetColor("_Color", color);
+                Color = color;
+            }
         });
 
         renderers[_i].material.color = picker.CurrentColor;
