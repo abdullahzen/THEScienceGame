@@ -65,15 +65,4 @@ public class movement : MonoBehaviour
       
 
 }
-
-        /*
-        * makes sure that the user makes contact with the ground.
-        * Once they do, the isGrounded flag is turn to true and
-        * the user is then given the ability to jump again
-        */
-        private void OnCollisionEnter(Collision other) {
-          if(other.gameObject.name == "floor"){
-            
-          }
-        }
 }
