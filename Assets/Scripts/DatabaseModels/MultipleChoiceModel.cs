@@ -11,14 +11,14 @@ public class MultipleChoiceModel : Model
 
     public IDbConnection CreateAndOpenDatabase() 
     { 
-        return CreateAndOpenDatabase("CREATE TABLE IF NOT EXISTS 'questions' ("
+        return CreateAndOpenDatabase("CREATE TABLE IF NOT EXISTS 'multiple_choice' ("
 	            + "'id' INTEGER,"
 	            + "'Question'	TEXT,"
 	            + "'right_answer' TEXT,"
 	            + "'wrong_answer1'	TEXT,"
 	            + "'wrong_answer2'	TEXT,"
 	            + "'wrong_answer3'	TEXT,"
-	            + "PRIMARY KEY('id'));");
+	            + "PRIMARY KEY('id' AUTOINCREMENT));");
     }
 
     public void InsertData(IDbConnection dbConnection, string question, string right_answer, string wrong_answer1, string wrong_answer2, string wrong_answer3)
