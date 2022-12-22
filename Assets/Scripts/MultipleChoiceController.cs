@@ -1,6 +1,8 @@
-using System.Security.Cryptography.X509Certificates;
-using System.Runtime.CompilerServices;
-using System.Security.AccessControl;
+
+using System.Diagnostics;
+using System.Runtime.Serialization;
+using System.Reflection.Emit;
+using Internal;
 using System;
 using System.Drawing;
 using System.Collections;
@@ -11,6 +13,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Data;
 using Mono.Data.Sqlite;
+
 
 public class MultipleChoiceController : MonoBehaviour
 {
@@ -33,27 +36,45 @@ public class MultipleChoiceController : MonoBehaviour
 
     [SerializeField] private GameObject resultCanvas;
     [SerializeField] private GameObject resultText;
+    
 
     private ArrayList Questions = new ArrayList();
     private ArrayList RightAnswers = new ArrayList();
     private ArrayList WrongAnswers1 = new ArrayList(); 
     private ArrayList WrongAnswers2 = new ArrayList();
     private ArrayList WrongAnswers3 = new ArrayList();   
+    private ArrayList difficulties = new ArrayList();
+    
+    
+
 
     private int previousQuestion = 0;
-
+    
+    [SerializeField]
+    private GameObject dbObj;
+    MultipleChoiceModel db;
 // Start is called before the first frame update
     void Start()
-    {
-
+    {   
         
+        db = dbObj.GetComponent<MultipleChoiceModel>();
         // QuestionModel model = new QuestionModel();
         // model.CreateAndOpenDatabase();
-        IDbConnection con = CreateAndOpenDatabase();
+        IDbConnection con = db.CreateAndOpenDatabase();
     
         
 
-        ReadData(con);
+        IDataReader reader = db.ReadData(con);
+        while (reader.Read()) // 17
+        {
+            Questions.Add(reader.GetString(1));
+            RightAnswers.Add(reader.GetString(2));
+            WrongAnswers1.Add(reader.GetString(3));
+            WrongAnswers2.Add(reader.GetString(4));
+            WrongAnswers3.Add(reader.GetString(5));
+            difficulties.Add(reader.GetInt32(6));
+            Debug.Log("Question: " + reader.GetString(1) + " Right Answer: " + reader.GetString(2) + " Wrong Answer 1: " + reader.GetString(3) + " Wrong Answer 2: " + reader.GetString(4) + " Wrong Answer 3: " + reader.GetString(5) + " Difficulty: " + reader.GetInt32(6));
+        }
         
         
         //---------------------------------//
@@ -155,65 +176,6 @@ public class MultipleChoiceController : MonoBehaviour
     public void pressContinue(){
         resultCanvas.SetActive(false);
         newQuestion();
-    }
-
-   private IDbConnection CreateAndOpenDatabase() // 3
-    {
-        // Open a connection to the database.
-        string dbUri = "URI=file:Assets/db/MyDatabase.db"; // 4
-        IDbConnection dbConnection = new SqliteConnection(dbUri); // 5
-        dbConnection.Open(); // 6
-
-        // Create a table for the hit count in the database if it does not exist yet.
-        IDbCommand dbCommandCreateTable = dbConnection.CreateCommand(); // 6
-        dbCommandCreateTable.CommandText = "CREATE TABLE IF NOT EXISTS 'questions' ("
-	            + "'id' INTEGER,"
-	            + "'Question'	TEXT,"
-	            + "'right_answer' TEXT,"
-	            + "'wrong_answer1'	TEXT,"
-	            + "'wrong_answer2'	TEXT,"
-	            + "'wrong_answer3'	TEXT,"
-	            + "PRIMARY KEY('id'));"; // 7
-        dbCommandCreateTable.ExecuteReader(); // 8
-
-        return dbConnection;
-    }
-
-    private void InsertData(IDbConnection dbConnection, string question, string right_answer, string wrong_answer1, string wrong_answer2, string wrong_answer3) // 9
-    {
-        IDbCommand dbCommandInsert = dbConnection.CreateCommand(); // 10
-        dbCommandInsert.CommandText = "INSERT INTO 'questions' ('question', 'right_answer', 'wrong_answer1', 'wrong_answer2', 'wrong_answer3') VALUES ('" + question + "', '" + right_answer + "', '" + wrong_answer1 + "', '" + wrong_answer2 + "', '" + wrong_answer3 + "');"; // 11
-        dbCommandInsert.ExecuteReader(); // 12
-    }
-
-    private void UpdateData(IDbConnection dbConnection, int id, string question, string right_answer, string wrong_answer1, string wrong_answer2, string wrong_answer3) // 29
-    {
-        IDbCommand dbCommandUpdate = dbConnection.CreateCommand(); // 30
-        dbCommandUpdate.CommandText = "UPDATE 'questions' SET question = '" + question + "', right_answer = '" + right_answer + "', wrong_answer1 = '" + wrong_answer1 + "', wrong_answer2 = '" + wrong_answer2 + "', wrong_answer3 = '" + wrong_answer3 + "' WHERE id = " + id + ";"; // 31
-        dbCommandUpdate.ExecuteReader(); // 32
-    }
-
-    private void ReadData(IDbConnection dbConnection) // 13
-    {
-        IDbCommand dbCommandRead = dbConnection.CreateCommand(); // 14
-        dbCommandRead.CommandText = "SELECT * FROM 'questions'"; // 15
-        IDataReader reader = dbCommandRead.ExecuteReader(); // 16
-
-        while (reader.Read()) // 17
-        {
-            Questions.Add(reader.GetString(1));
-            RightAnswers.Add(reader.GetString(2));
-            WrongAnswers1.Add(reader.GetString(3));
-            WrongAnswers2.Add(reader.GetString(4));
-            WrongAnswers3.Add(reader.GetString(5));
-        }
-    }
-
-    private void DeleteData(IDbConnection dbConnection, int id) // 25
-    {
-        IDbCommand dbCommandDelete = dbConnection.CreateCommand(); // 26
-        dbCommandDelete.CommandText = "DELETE FROM 'questions' WHERE id = " + id + ";"; // 27
-        dbCommandDelete.ExecuteReader(); // 28
     }
 
     
