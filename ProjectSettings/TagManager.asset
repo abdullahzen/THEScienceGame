@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - atomPanel
+  - Button
+  - glow
+  - Result
+  - Clicked
+  - Molecule
   layers:
   - Default
   - TransparentFX
