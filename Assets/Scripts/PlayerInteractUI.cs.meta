@@ -3,7 +3,10 @@ guid: a0e3d0601818eba4e9a0c637972393b2
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - containerGameObject: {fileID: -927199367670048503, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
+  - playerInteract: {instanceID: 0}
+  - interactTextMeshProUGUI: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

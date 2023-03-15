@@ -10,6 +10,7 @@ TagManager:
   - Result
   - Clicked
   - Molecule
+  - ResourceText
   layers:
   - Default
   - TransparentFX
