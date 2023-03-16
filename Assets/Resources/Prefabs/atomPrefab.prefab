@@ -216,6 +216,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   atomButton: {fileID: 7277439066958994550}
   submit: {fileID: 0}
+  isGlowing: 1
+  clickCount: 0
 --- !u!1 &7868283865590293387
 GameObject:
   m_ObjectHideFlags: 0

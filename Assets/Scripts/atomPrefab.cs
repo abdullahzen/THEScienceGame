@@ -9,15 +9,26 @@ public class atomPrefab : MonoBehaviour
     private Button atomButton;
     [SerializeField]
     private submitButton submit;
+    [SerializeField]
+    public bool isGlowing;
+    
     private Glow glow;
-    private int clickCount;
+    public int clickCount;
+    
+    
     void Start()
     {
+
         Button btn = atomButton.GetComponent<Button>();
         btn.onClick.AddListener(TaskOnClick);
-        glow = atomButton.GetComponentInChildren<Glow>();
-        glow.glowOff();
+        if(isGlowing){ 
+            glow = atomButton.GetComponentInChildren<Glow>();
+            glow.glowOff();
+        }
         clickCount = -1;
+
+        
+
     }
 
     void TaskOnClick()
@@ -26,14 +37,16 @@ public class atomPrefab : MonoBehaviour
         if (clickCount%2 == 0)
         {
             gameObject.tag = "Clicked";
-            submit.addOrRemoveAtom(atomButton.name, false);
-            glow.glowOn();
+            submit.addOrRemoveAtom(atomButton.name + "", false);
+            if(isGlowing)
+                glow.glowOn();
         }
         else
         {
             gameObject.tag = "Button";
-            submit.addOrRemoveAtom(atomButton.name, true);
-            glow.glowOff();
+            submit.addOrRemoveAtom(atomButton.name + "", true);
+            if(isGlowing) 
+                glow.glowOff();
         }
         
     }
