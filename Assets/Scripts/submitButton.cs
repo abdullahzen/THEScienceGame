@@ -30,7 +30,9 @@ public class submitButton : MonoBehaviour
     ArrayList userAnswer = new ArrayList();
 
     ArrayList answer = new ArrayList();
-
+    ArrayList images1 = new ArrayList();
+    ArrayList images2 = new ArrayList();
+    ArrayList images3 = new ArrayList();
     ArrayList Questions = new ArrayList();
     ArrayList Answers = new ArrayList();
 
@@ -38,6 +40,8 @@ public class submitButton : MonoBehaviour
     private string table;
     [SerializeField]
     private string additional;
+    [SerializeField]
+    private int randomNum;
     void Start()
     {
 
@@ -54,8 +58,19 @@ public class submitButton : MonoBehaviour
             Answers.Add(reader.GetString(2));
             // Debug.Log("Question: " + reader.GetString(1) + " Answer " + reader.GetString(2));
         }
+        if(additional != ""){
+            
+            while (reader.Read()) // 17
+            {
+                images1.Add(reader.GetString(3));
+                images2.Add(reader.GetString(4));
+                images3.Add(reader.GetString(5));
+
+                // Debug.Log("Question: " + reader.GetString(1) + " Answer " + reader.GetString(2));
+            }
+        }
         
-        randomizer(5);
+        randomizer(randomNum);
         
         //for testing
         // for(int i = 0; i < Questions.Count; i++){
@@ -107,7 +122,8 @@ public class submitButton : MonoBehaviour
         bool isLost = false;
         userAnswer.Sort();
         answer.Sort();
-        Debug.Log("User Answer: " + userAnswer.Count);
+        // Debug.Log("answer: " + answer.Count);
+        // Debug.Log("User Answer: " + userAnswer.Count);
         foreach(string s in userAnswer){
 
             Debug.Log(s);
@@ -136,7 +152,7 @@ public class submitButton : MonoBehaviour
         else
         {
             
-            Debug.Log("Count");
+            // Debug.Log("Count");
             isLost = true;
             result = changeText("Result", "Incorrect");
             StartCoroutine(ClearResult(result));
@@ -160,6 +176,7 @@ public class submitButton : MonoBehaviour
             if(Answers.Count == 0){
                 result = changeText("Result", "You Win");
                 StartCoroutine(ClearResult(result));
+                return;
             }
             answer = new ArrayList();
             userAnswer = new ArrayList();
@@ -223,12 +240,18 @@ public class submitButton : MonoBehaviour
 
     //For each answer to the question, it parses the answer string into arraylist
     public void updateQuestion(){
-       Debug.Log("Question: " + questionText.text);
-        Debug.Log("Answer: " + Answers[0]);
+       
+       
+       
         questionText.text = Questions[0].ToString();
         foreach(string s in Answers[0].ToString().Split(',')){
             answer.Add(s);
         }
+        Debug.Log("Question: " + questionText.text);
+        foreach(string s in answer){
+           Debug.Log("Answer: " + s);
+        }
+        Debug.Log("AnswerCount: " + answer.Count);
         
     }
 
