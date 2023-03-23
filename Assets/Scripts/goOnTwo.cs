@@ -8,6 +8,16 @@ public class goOnTwo : MonoBehaviour
     [SerializeField]
     private GameObject button;
     private resourceText rt;
+    [SerializeField]
+    private GameObject carbButtonToDisable;
+    [SerializeField]
+    private GameObject carbonButtonToDisable;
+    [SerializeField]
+    private GameObject lipidButtonToDisable;
+    [SerializeField]
+    private GameObject proteinButtonToDisable;
+    [SerializeField]
+    private GameObject nucleicAcidButtonToDisable;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +30,12 @@ public class goOnTwo : MonoBehaviour
 
     void TaskOnClick()
     {
+        // enable back bottom buttons
+        carbButtonToDisable.SetActive(true);
+        carbonButtonToDisable.SetActive(true);
+        lipidButtonToDisable.SetActive(true);
+        proteinButtonToDisable.SetActive(true);
+        nucleicAcidButtonToDisable.SetActive(true);
         button.SetActive(false);
         rt.changeText("Again, I’m impressed by your interest in chemistry. Other captains" +
             " I’ve served are content enough to identify the biomolecules and collect the" +
