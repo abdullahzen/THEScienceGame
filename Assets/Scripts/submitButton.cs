@@ -213,6 +213,9 @@ public class submitButton : MonoBehaviour
                 if(ap.isGlowing){ 
                     ap.SendMessage("glowOffPrefab");
                     ap.clickCount = -1;
+                } else {
+                    ap.SendMessage("deselect");
+                    ap.clickCount = -1;
                 }
             }
     }
