@@ -6,12 +6,12 @@ using Mono.Data.Sqlite;
 
 public class MoleculeQuestionModel : Model
 {
-    private string table = "molecule_questions";
+    public string table = "molecule_questions";
 
 
     public IDbConnection CreateAndOpenDatabase() 
     { 
-        return CreateAndOpenDatabase("CREATE TABLE IF NOT EXISTS 'molecule_questions' ("
+        return CreateAndOpenDatabase("CREATE TABLE IF NOT EXISTS '"+ table +"' ("
 	            + "'id' INTEGER,"
 	            + "'Question'	TEXT,"
 	            + "'Answer' TEXT,"

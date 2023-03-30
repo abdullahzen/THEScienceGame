@@ -1,6 +1,8 @@
 
 
 
+// using System;
+using System.Data.Common;
 using System.Threading;
 using System.Collections;
 using System.Collections.Generic;
@@ -20,10 +22,9 @@ public class submitButton : MonoBehaviour
     private TextMeshProUGUI  questionText;
     
 
-    [SerializeField]
-    private GameObject dbObj;
     
-    private Model db;
+    [SerializeField]
+    private MoleculeQuestionModel db;
 
 
 
@@ -39,17 +40,12 @@ public class submitButton : MonoBehaviour
     [SerializeField]
     private string table;
     [SerializeField]
-    private string additional;
-    [SerializeField]
     private int randomNum;
     void Start()
     {
-
-        db = dbObj.GetComponent<Model>();
-
-
-
-        IDbConnection con = connector(table, additional);
+        
+        db.table=table;
+        IDbConnection con = db.CreateAndOpenDatabase();
         //insert data
         IDataReader reader = db.ReadData(con, table);
         while (reader.Read()) // 17
@@ -57,17 +53,6 @@ public class submitButton : MonoBehaviour
             Questions.Add(reader.GetString(1));
             Answers.Add(reader.GetString(2));
             // Debug.Log("Question: " + reader.GetString(1) + " Answer " + reader.GetString(2));
-        }
-        if(additional != ""){
-            
-            while (reader.Read()) // 17
-            {
-                images1.Add(reader.GetString(3));
-                images2.Add(reader.GetString(4));
-                images3.Add(reader.GetString(5));
-
-                // Debug.Log("Question: " + reader.GetString(1) + " Answer " + reader.GetString(2));
-            }
         }
         
         randomizer(randomNum);
@@ -258,13 +243,6 @@ public class submitButton : MonoBehaviour
         
     }
 
-    public IDbConnection connector(string table, string additional){
-        return db.CreateAndOpenDatabase("CREATE TABLE IF NOT EXISTS '"+ table +"' ("
-	            + "'id' INTEGER,"
-	            + "'Question'	TEXT,"
-	            + "'Answer' TEXT,"
-                + additional
-	            + "PRIMARY KEY('id' AUTOINCREMENT));");
-    }
+    
 
 }

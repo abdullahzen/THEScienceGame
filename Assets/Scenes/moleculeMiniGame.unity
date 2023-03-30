@@ -130,9 +130,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1885677450}
     m_Modifications:
+    - target: {fileID: 2090582390640677732, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2090582390640677734, guid: f7314852aa2494544978fdfad95bf370, type: 3}
       propertyPath: m_Text
       value: K
+      objectReference: {fileID: 0}
+    - target: {fileID: 2090582390640677734, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2090582390727741924, guid: f7314852aa2494544978fdfad95bf370, type: 3}
       propertyPath: m_Pivot.x
@@ -379,9 +387,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1885677450}
     m_Modifications:
+    - target: {fileID: 2090582390640677732, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2090582390640677734, guid: f7314852aa2494544978fdfad95bf370, type: 3}
       propertyPath: m_Text
       value: N
+      objectReference: {fileID: 0}
+    - target: {fileID: 2090582390640677734, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2090582390727741924, guid: f7314852aa2494544978fdfad95bf370, type: 3}
       propertyPath: m_Pivot.x
@@ -549,6 +565,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1885677450}
     m_Modifications:
+    - target: {fileID: 2090582390640677732, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2090582390640677734, guid: f7314852aa2494544978fdfad95bf370, type: 3}
       propertyPath: m_Text
       value: P
@@ -866,6 +886,7 @@ MonoBehaviour:
   dbObj: {fileID: 590521612}
   table: molecule_questions
   additional: 
+  randomNum: 5
 --- !u!1 &203610738
 GameObject:
   m_ObjectHideFlags: 0
@@ -1350,9 +1371,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1885677450}
     m_Modifications:
+    - target: {fileID: 2090582390640677732, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2090582390640677734, guid: f7314852aa2494544978fdfad95bf370, type: 3}
       propertyPath: m_Text
       value: O
+      objectReference: {fileID: 0}
+    - target: {fileID: 2090582390640677734, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2090582390727741924, guid: f7314852aa2494544978fdfad95bf370, type: 3}
       propertyPath: m_Pivot.x
@@ -1613,9 +1642,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1885677450}
     m_Modifications:
+    - target: {fileID: 2090582390640677732, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2090582390640677734, guid: f7314852aa2494544978fdfad95bf370, type: 3}
       propertyPath: m_Text
       value: S
+      objectReference: {fileID: 0}
+    - target: {fileID: 2090582390640677734, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2090582390727741924, guid: f7314852aa2494544978fdfad95bf370, type: 3}
       propertyPath: m_Pivot.x
@@ -1877,11 +1914,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1885677450}
     m_Modifications:
+    - target: {fileID: 2090582390640677732, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2090582390640677734, guid: f7314852aa2494544978fdfad95bf370, type: 3}
       propertyPath: m_Text
-      value: 'Na
-
-'
+      value: Na
+      objectReference: {fileID: 0}
+    - target: {fileID: 2090582390640677734, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2090582390727741924, guid: f7314852aa2494544978fdfad95bf370, type: 3}
       propertyPath: m_Pivot.x
@@ -2174,9 +2217,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1885677450}
     m_Modifications:
+    - target: {fileID: 2090582390640677732, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2090582390640677734, guid: f7314852aa2494544978fdfad95bf370, type: 3}
       propertyPath: m_Text
       value: C
+      objectReference: {fileID: 0}
+    - target: {fileID: 2090582390640677734, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2090582390727741924, guid: f7314852aa2494544978fdfad95bf370, type: 3}
       propertyPath: m_Pivot.x
@@ -3045,9 +3096,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1885677450}
     m_Modifications:
+    - target: {fileID: 2090582390640677732, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2090582390640677734, guid: f7314852aa2494544978fdfad95bf370, type: 3}
       propertyPath: m_Text
       value: Cl
+      objectReference: {fileID: 0}
+    - target: {fileID: 2090582390640677734, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2090582390727741924, guid: f7314852aa2494544978fdfad95bf370, type: 3}
       propertyPath: m_Pivot.x
@@ -3277,6 +3336,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1885677450}
     m_Modifications:
+    - target: {fileID: 2090582390640677732, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2090582390640677734, guid: f7314852aa2494544978fdfad95bf370, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2090582390727741924, guid: f7314852aa2494544978fdfad95bf370, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
