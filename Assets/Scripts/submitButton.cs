@@ -1,23 +1,85 @@
+
+
+
+// using System;
+using System.Data.Common;
+using System.Threading;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Data;
+using Mono.Data.Sqlite;
+using TMPro;
 
 public class submitButton : MonoBehaviour
 {
     private Text result;
     private GameObject go;
     private GameObject[] clicked;
-    List<string> userAnswer = new List<string>();
-    List<string> answer;
+
+    [SerializeField]
+    private TextMeshProUGUI  questionText;
+    
+
+    
+    [SerializeField]
+    private MoleculeQuestionModel db;
+
+
+
+    ArrayList userAnswer = new ArrayList();
+
+    ArrayList answer = new ArrayList();
+    ArrayList images1 = new ArrayList();
+    ArrayList images2 = new ArrayList();
+    ArrayList images3 = new ArrayList();
+    ArrayList Questions = new ArrayList();
+    ArrayList Answers = new ArrayList();
+
+    [SerializeField]
+    private string table;
+    [SerializeField]
+    private int randomNum;
     void Start()
     {
-        //gevorg get the answers for nitric acid here
-        answer = new List<string>()
+        
+        db.table=table;
+        IDbConnection con = db.CreateAndOpenDatabase();
+        //insert data
+        IDataReader reader = db.ReadData(con, table);
+        while (reader.Read()) // 17
         {
-            "Hydrogen", "Nitrogen", "Oxygen", "Oxygen", "Oxygen"
-        };
+            Questions.Add(reader.GetString(1));
+            Answers.Add(reader.GetString(2));
+            // Debug.Log("Question: " + reader.GetString(1) + " Answer " + reader.GetString(2));
+        }
+        
+        randomizer(randomNum);
+        
+        //for testing
+        // for(int i = 0; i < Questions.Count; i++){
+        //     Debug.Log(Questions[i] + " " + Answers[i]);
+        // }
+
+
+        updateQuestion();
+        
+        
+        //remove
+        
+       
+        // foreach(string s in answer){
+
+        //     Debug.Log(s);
+        // }
+        
     }
+
+   
+
+    
+
     //if remove parameter is true then we remove the atom from the list
     //else we add it to the list
     public void addOrRemoveAtom(string atom, bool remove)
@@ -26,7 +88,7 @@ public class submitButton : MonoBehaviour
         {
             for (int i = 0; i < userAnswer.Count; i++)
             {
-                if (userAnswer[i] == atom)
+                if (userAnswer[i].Equals(atom))
                 {
                     userAnswer.RemoveAt(i);
                     break;
@@ -37,17 +99,35 @@ public class submitButton : MonoBehaviour
         {
             userAnswer.Add(atom);
         }
+        
+       
     }
     public void checkAnswers()
     {
         bool isLost = false;
         userAnswer.Sort();
+        answer.Sort();
+        // Debug.Log("answer: " + answer.Count);
+        // Debug.Log("User Answer: " + userAnswer.Count);
+        foreach(string s in userAnswer){
+
+            Debug.Log(s);
+        }
+
+        Debug.Log("answer: " + answer.Count);
+        foreach(string s in answer){
+
+            Debug.Log(s);
+        }
+        
         if (answer.Count == userAnswer.Count)
         {
             for (int i = 0; i < answer.Count; i++)
             {
-                if (answer[i] != userAnswer[i])
+                
+                if (!answer[i].Equals(userAnswer[i]))
                 {
+                    
                     isLost = true;
                     result = changeText("Result", "Incorrect");
                     StartCoroutine(ClearResult(result));
@@ -56,6 +136,8 @@ public class submitButton : MonoBehaviour
         }
         else
         {
+            
+            // Debug.Log("Count");
             isLost = true;
             result = changeText("Result", "Incorrect");
             StartCoroutine(ClearResult(result));
@@ -67,21 +149,28 @@ public class submitButton : MonoBehaviour
             StartCoroutine(ClearResult(result));
             userAnswer.Clear();
             //clear disable the glow on all that have been selected
-            clicked = GameObject.FindGameObjectsWithTag("Clicked");
-            foreach(var ob in clicked)
-            {
-                atomPrefab ap = ob.GetComponent<atomPrefab>();
-                ap.SendMessage("glowOffPrefab");
-            }
+            unClick();
             //change nitric acid to formaldehyde
             //gevorg if you want i guess you can get the question from the db and put it here
-            result = changeText("Molecule", "Formaldehyde");
+            
             //change the answer to the next one
-            //gevorg get the answers for formaldehyde here
-            answer = new List<string>()
-            {
-                "Carbon", "Hydrogen", "Hydrogen", "Oxygen"
-            };
+             
+            
+            Answers.RemoveAt(0);
+            Questions.RemoveAt(0);
+            if(Answers.Count == 0){
+                result = changeText("Result", "You Win");
+                StartCoroutine(ClearResult(result));
+                return;
+            }
+            answer = new ArrayList();
+            userAnswer = new ArrayList();
+            updateQuestion();
+            
+            
+            
+            
+            
         }
 
         IEnumerator ClearResult(Text result)
@@ -100,4 +189,60 @@ public class submitButton : MonoBehaviour
             return result;
         }
     }
+
+    public void unClick(){
+        clicked = GameObject.FindGameObjectsWithTag("Clicked");
+            foreach(var ob in clicked)
+            {
+                atomPrefab ap = ob.GetComponent<atomPrefab>();
+                if(ap.isGlowing){ 
+                    ap.SendMessage("glowOffPrefab");
+                    ap.clickCount = -1;
+                } else {
+                    ap.SendMessage("deselect");
+                    ap.clickCount = -1;
+                }
+            }
+    }
+
+    //5 random questions and answers
+    public void randomizer(int questionNum){
+        ArrayList randomQuestions = new ArrayList();
+        ArrayList randomAnswers = new ArrayList();
+        ArrayList repeted = new ArrayList();
+
+        for(int i = 0; i < questionNum; i++){
+            int random = Random.Range(0, Questions.Count);
+            while(repeted.Contains(random)){
+                random = Random.Range(0, Questions.Count);
+            }
+            repeted.Add(random);
+            randomQuestions.Add(Questions[random]);
+            randomAnswers.Add(Answers[random]);
+        }
+
+        Questions = randomQuestions;
+        Answers = randomAnswers;
+    }
+
+
+    //For each answer to the question, it parses the answer string into arraylist
+    public void updateQuestion(){
+       
+       
+       
+        questionText.text = Questions[0].ToString();
+        foreach(string s in Answers[0].ToString().Split(',')){
+            answer.Add(s);
+        }
+        Debug.Log("Question: " + questionText.text);
+        foreach(string s in answer){
+           Debug.Log("Answer: " + s);
+        }
+        Debug.Log("AnswerCount: " + answer.Count);
+        
+    }
+
+    
+
 }
