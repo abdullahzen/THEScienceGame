@@ -31,10 +31,10 @@ public class movement : MonoBehaviour
        
         
         //sprint (zoom the FoV when user wants to sprint)
-       if(Input.GetKey(KeyCode.LeftShift)){
-        speed = 0.25f;
+       if(Input.GetKeyDown(KeyCode.LeftShift)){
+        speed += 0.45f;
        }else if(Input.GetKeyUp(KeyCode.LeftShift)){
-        speed = 0.05f;
+        speed = 0.5f;
        } 
 
         //walk backwards

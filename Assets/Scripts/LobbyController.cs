@@ -19,7 +19,11 @@ public class LobbyController : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider other){
-        SceneManager.LoadScene("ShipChosing");
-        SceneManager.UnloadSceneAsync("lobby");
+        if(other.name == "Capsule")
+        {
+            Debug.Log("go to next scene now");
+        }
+        //SceneManager.LoadScene("ShipChosing");
+        //SceneManager.UnloadSceneAsync("lobby");
     }
 }

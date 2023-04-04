@@ -7,15 +7,18 @@ public class NPCInteractable : MonoBehaviour
     [SerializeField] private string interactText;
     [SerializeField] private GameObject containerGameObject;
 
-    public void Interact() {
+    public void Interact()
+    {
         containerGameObject.SetActive(true);
     }
 
-    public void HideInteract() {
+    public void HideInteract()
+    {
         containerGameObject.SetActive(false);
     }
 
-    public string GetInteractText() {
+    public string GetInteractText()
+    {
         return interactText;
     }
 }
