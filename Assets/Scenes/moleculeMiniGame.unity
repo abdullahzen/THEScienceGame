@@ -771,9 +771,9 @@ RectTransform:
   m_Father: {fileID: 1679689701}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1, y: -198}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 4, y: 38}
   m_SizeDelta: {x: 375.8071, y: 64.285}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &198031332
@@ -883,9 +883,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questionText: {fileID: 773333623}
-  dbObj: {fileID: 590521612}
+  db: {fileID: 590521613}
   table: molecule_questions
-  additional: 
   randomNum: 5
 --- !u!1 &203610738
 GameObject:
@@ -1155,9 +1154,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 590521612}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3275b10803900cd43bd737d267e2b18a, type: 3}
+  m_Script: {fileID: 11500000, guid: d36a69df81cfef5448b0dcfed4da59a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  table: molecule_questions
 --- !u!4 &590521614
 Transform:
   m_ObjectHideFlags: 0
@@ -1359,10 +1359,10 @@ RectTransform:
   m_Father: {fileID: 1670390005}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.6, y: 208.8}
-  m_SizeDelta: {x: 792.78, y: 55.421}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: -3, y: -29}
+  m_SizeDelta: {x: 792.78, y: 55.42099}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &775785194
 PrefabInstance:
