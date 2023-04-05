@@ -60,7 +60,9 @@ public class MultipleChoiceController : MonoBehaviour
         // model.CreateAndOpenDatabase();
         IDbConnection con = db.CreateAndOpenDatabase();
     
-        
+        //insert data
+        // db.InsertData(con, "Which three atoms are commonly found in monosaccharides?", "C,H,O", "C,H,O", "C,H,O", "C,H,O");
+         
 
         IDataReader reader = db.ReadData(con);
         while (reader.Read()) // 17

@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2090582390640677733
 RectTransform:
   m_ObjectHideFlags: 0
@@ -216,6 +216,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   atomButton: {fileID: 7277439066958994550}
   submit: {fileID: 0}
+  isGlowing: 1
+  selected: {fileID: 2090582390640677732}
+  clickCount: 0
 --- !u!1 &7868283865590293387
 GameObject:
   m_ObjectHideFlags: 0

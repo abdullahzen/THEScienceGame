@@ -14,7 +14,7 @@ public class Model : MonoBehaviour
     void Update(){
         
     }
-    protected IDbConnection CreateAndOpenDatabase(string tableQuery) 
+    public IDbConnection CreateAndOpenDatabase(string tableQuery) 
     {
         // Open a connection to the database.
         string dbUri = "URI=file:Assets/db/MyDatabase.db"; 
@@ -28,7 +28,7 @@ public class Model : MonoBehaviour
         return dbConnection;
     }
     
-    protected void InsertData(IDbConnection dbConnection, string table, Dictionary<string, string> data )
+    public void InsertData(IDbConnection dbConnection, string table, Dictionary<string, string> data )
     {
         string query = "INSERT INTO " + table + " (";
         string values = "VALUES (";
@@ -46,7 +46,7 @@ public class Model : MonoBehaviour
         dbCommandInsert.ExecuteReader(); 
     }
 
-    protected void UpdateData(IDbConnection dbConnection, string table, int id, Dictionary<string, string> data )
+    public void UpdateData(IDbConnection dbConnection, string table, int id, Dictionary<string, string> data )
     {
         string query = "INSERT INTO " + table + " (";
         string values = "VALUES (";
@@ -64,14 +64,14 @@ public class Model : MonoBehaviour
         dbCommandInsert.ExecuteReader(); 
     }
 
-    protected IDataReader ReadData(IDbConnection dbConnection, string table) 
+    public IDataReader ReadData(IDbConnection dbConnection, string table) 
     {
         IDbCommand dbCommandRead = dbConnection.CreateCommand(); 
         dbCommandRead.CommandText = "SELECT * FROM '" + table + "'"; 
         return dbCommandRead.ExecuteReader();
     }
 
-    protected void DeleteData(IDbConnection dbConnection, string table, int id) 
+    public void DeleteData(IDbConnection dbConnection, string table, int id) 
     {
         IDbCommand dbCommandDelete = dbConnection.CreateCommand(); 
         dbCommandDelete.CommandText = "DELETE FROM '" + table + "' WHERE id = " + id + ";"; 
