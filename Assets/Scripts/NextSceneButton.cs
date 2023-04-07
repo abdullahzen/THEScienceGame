@@ -6,18 +6,16 @@ using UnityEngine.UI;
 
 public class NextSceneButton : MonoBehaviour
 {
-    [SerializeField]
-    private Button button;
-    // Start is called before the first frame update
+    
+    
     void Start()
     {
-        Button btn = button.GetComponent<Button>();
-        btn.onClick.AddListener(TaskOnClick);
+        
     }
 
-    void TaskOnClick()
+    public void TaskOnClick()
     {
-        Debug.Log("we shall go to next scene");
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

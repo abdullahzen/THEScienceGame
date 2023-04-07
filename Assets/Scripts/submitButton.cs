@@ -21,8 +21,8 @@ public class submitButton : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI  questionText;
     
-
-    
+    [SerializeField]
+    private GameObject displayPrefab;    
     [SerializeField]
     private MoleculeQuestionModel db;
 
