@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class robotScript : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class robotScript : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Q))
             {
-                Debug.Log("robot dialogueeee");
+                SceneManager.LoadScene("robotDialogue");
             }
         }
     }

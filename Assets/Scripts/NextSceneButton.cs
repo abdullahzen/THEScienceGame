@@ -15,7 +15,6 @@ public class NextSceneButton : MonoBehaviour
 
     public void TaskOnClick()
     {
-        
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

@@ -227,11 +227,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2090582390640677733, guid: f7314852aa2494544978fdfad95bf370, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -4
+      value: -3.9999924
       objectReference: {fileID: 0}
     - target: {fileID: 2090582390640677733, guid: f7314852aa2494544978fdfad95bf370, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -32
+      value: -32.000004
       objectReference: {fileID: 0}
     - target: {fileID: 2090582390640677734, guid: f7314852aa2494544978fdfad95bf370, type: 3}
       propertyPath: m_Text
@@ -275,11 +275,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2090582390727741924, guid: f7314852aa2494544978fdfad95bf370, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 80
+      value: 155.2018
       objectReference: {fileID: 0}
     - target: {fileID: 2090582390727741924, guid: f7314852aa2494544978fdfad95bf370, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 83.109406
+      value: 83.1094
       objectReference: {fileID: 0}
     - target: {fileID: 2090582390727741924, guid: f7314852aa2494544978fdfad95bf370, type: 3}
       propertyPath: m_LocalPosition.x
@@ -311,11 +311,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2090582390727741924, guid: f7314852aa2494544978fdfad95bf370, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 20.600018
+      value: 36.7
       objectReference: {fileID: 0}
     - target: {fileID: 2090582390727741924, guid: f7314852aa2494544978fdfad95bf370, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 56.900024
+      value: 63.9
       objectReference: {fileID: 0}
     - target: {fileID: 2090582390727741924, guid: f7314852aa2494544978fdfad95bf370, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2570,9 +2570,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questionText: {fileID: 289954209}
+  displayPrefab: {fileID: 0}
   db: {fileID: 1330253563}
   table: image_select_questions
   randomNum: 5
+  tries: 3
 --- !u!114 &938323326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3654,11 +3656,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2090582390727741924, guid: f7314852aa2494544978fdfad95bf370, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 80
+      value: 147.9097
       objectReference: {fileID: 0}
     - target: {fileID: 2090582390727741924, guid: f7314852aa2494544978fdfad95bf370, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 83.109406
+      value: 83.6021
       objectReference: {fileID: 0}
     - target: {fileID: 2090582390727741924, guid: f7314852aa2494544978fdfad95bf370, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3690,11 +3692,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2090582390727741924, guid: f7314852aa2494544978fdfad95bf370, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 129.60002
+      value: 203.95483
       objectReference: {fileID: 0}
     - target: {fileID: 2090582390727741924, guid: f7314852aa2494544978fdfad95bf370, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 57.900024
+      value: 73.24632
       objectReference: {fileID: 0}
     - target: {fileID: 2090582390727741924, guid: f7314852aa2494544978fdfad95bf370, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

@@ -1,6 +1,7 @@
 
 
 
+
 // using System;
 using System.Data.Common;
 using System.Threading;
@@ -11,6 +12,7 @@ using UnityEngine.UI;
 using System.Data;
 using Mono.Data.Sqlite;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class submitButton : MonoBehaviour
 {
@@ -41,6 +43,10 @@ public class submitButton : MonoBehaviour
     private string table;
     [SerializeField]
     private int randomNum;
+
+    [SerializeField]
+    private int tries = 3;
+
     void Start()
     {
         
@@ -52,34 +58,14 @@ public class submitButton : MonoBehaviour
         {
             Questions.Add(reader.GetString(1));
             Answers.Add(reader.GetString(2));
-            // Debug.Log("Question: " + reader.GetString(1) + " Answer " + reader.GetString(2));
         }
         
         randomizer(randomNum);
-        
-        //for testing
-        // for(int i = 0; i < Questions.Count; i++){
-        //     Debug.Log(Questions[i] + " " + Answers[i]);
-        // }
-
-
         updateQuestion();
         
         
-        //remove
-        
-       
-        // foreach(string s in answer){
-
-        //     Debug.Log(s);
-        // }
-        
     }
-
-   
-
     
-
     //if remove parameter is true then we remove the atom from the list
     //else we add it to the list
     public void addOrRemoveAtom(string atom, bool remove)
@@ -99,16 +85,12 @@ public class submitButton : MonoBehaviour
         {
             userAnswer.Add(atom);
         }
-        
-       
     }
     public void checkAnswers()
     {
         bool isLost = false;
         userAnswer.Sort();
         answer.Sort();
-        // Debug.Log("answer: " + answer.Count);
-        // Debug.Log("User Answer: " + userAnswer.Count);
         foreach(string s in userAnswer){
 
             Debug.Log(s);
@@ -136,16 +118,19 @@ public class submitButton : MonoBehaviour
         }
         else
         {
-            
-            // Debug.Log("Count");
             isLost = true;
             result = changeText("Result", "Incorrect");
             StartCoroutine(ClearResult(result));
         }
+        tries--;
         
-        if(isLost == false)
+        if(!isLost || tries == 0)
         {
-            result = changeText("Result", "Correct");
+            if(!isLost) {
+                SaveState.score += tries;
+                result = changeText("Result", "Correct");
+            }
+            
             StartCoroutine(ClearResult(result));
             userAnswer.Clear();
             //clear disable the glow on all that have been selected
@@ -159,19 +144,20 @@ public class submitButton : MonoBehaviour
             Answers.RemoveAt(0);
             Questions.RemoveAt(0);
             if(Answers.Count == 0){
-                result = changeText("Result", "You Win");
+                result = changeText("Result", "Next");
                 StartCoroutine(ClearResult(result));
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
                 return;
             }
             answer = new ArrayList();
             userAnswer = new ArrayList();
             updateQuestion();
-            
-            
-            
-            
-            
         }
+
+        
+        
+        
+        
 
         IEnumerator ClearResult(Text result)
         {
@@ -189,6 +175,8 @@ public class submitButton : MonoBehaviour
             return result;
         }
     }
+
+    
 
     public void unClick(){
         clicked = GameObject.FindGameObjectsWithTag("Clicked");
@@ -229,17 +217,15 @@ public class submitButton : MonoBehaviour
     //For each answer to the question, it parses the answer string into arraylist
     public void updateQuestion(){
        
-       
-       
         questionText.text = Questions[0].ToString();
         foreach(string s in Answers[0].ToString().Split(',')){
             answer.Add(s);
         }
-        Debug.Log("Question: " + questionText.text);
-        foreach(string s in answer){
-           Debug.Log("Answer: " + s);
-        }
-        Debug.Log("AnswerCount: " + answer.Count);
+        // Debug.Log("Question: " + questionText.text);
+        // foreach(string s in answer){
+        //    Debug.Log("Answer: " + s);
+        // }
+        // Debug.Log("AnswerCount: " + answer.Count);
         
     }
 

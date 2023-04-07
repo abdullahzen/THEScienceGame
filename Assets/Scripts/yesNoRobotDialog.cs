@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class yesNoRobotDialog : MonoBehaviour
 {
@@ -37,11 +38,11 @@ public class yesNoRobotDialog : MonoBehaviour
         yield return new WaitForSeconds(3);
         if (yesTextToEnable.activeSelf)
         {
-            Debug.Log("go to game now");
+            SceneManager.LoadScene("newLobbyScene");
         }
         if (noTextToEnable.activeSelf)
         {
-            Debug.Log("go to main menu");
+            SceneManager.LoadScene("newLobbyScene");
         }
     }
 }

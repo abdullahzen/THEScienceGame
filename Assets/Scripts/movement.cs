@@ -7,10 +7,13 @@ public class movement : MonoBehaviour
 {
 
     public Rigidbody rb;
-    float speed = 0.5f;
+    float speed = 0.2f;
     private float x;
      private float y;
      private Vector3 rotateValue;
+
+    [SerializeField]
+    private GameObject gate;
 
 
     // Start is called before the first frame update
@@ -56,13 +59,14 @@ public class movement : MonoBehaviour
        if(Input.GetKey(KeyCode.Escape)){
           SceneManager.LoadScene(SceneManager.GetActiveScene().name);
        }
-
+        if (Vector3.Distance(transform.position,gate.transform.position) <=5 )
+        {
+            SceneManager.LoadScene("Dialogue1");
+            return;
+        }
         //move camera
           y = Input.GetAxis("Mouse X");
          rotateValue = new Vector3(x, y * -1, 0);
          transform.eulerAngles = transform.eulerAngles - rotateValue;
-
-      
-
-}
+  }
 }
