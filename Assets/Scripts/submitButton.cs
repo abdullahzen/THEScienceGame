@@ -2,6 +2,7 @@
 
 
 
+using System.Resources;
 // using System;
 using System.Data.Common;
 using System.Threading;
@@ -47,9 +48,21 @@ public class submitButton : MonoBehaviour
     [SerializeField]
     private int tries = 3;
 
+    private int currentTries = 0;
+
     void Start()
     {
-        
+        currentTries = tries;
+        if(table == "molecule_questions"){
+            SaveState.firstLevelQuestions = randomNum;
+            SaveState.firstLevelTries = tries;
+        } else if(table == "image_select_questions"){
+            SaveState.secondLevelQuestions += randomNum;
+            SaveState.secondLevelTries = tries;
+        } else if(table == "image_select_questions_last" || table == "molecule_questions_image"){
+            SaveState.thirdLevelQuestions += randomNum;
+            SaveState.thirdLevelTries = tries;
+        }
         db.table=table;
         IDbConnection con = db.CreateAndOpenDatabase();
         //insert data
@@ -86,21 +99,22 @@ public class submitButton : MonoBehaviour
             userAnswer.Add(atom);
         }
     }
+    
     public void checkAnswers()
     {
         bool isLost = false;
         userAnswer.Sort();
         answer.Sort();
-        foreach(string s in userAnswer){
+        // foreach(string s in userAnswer){
 
-            Debug.Log(s);
-        }
+        //     Debug.Log(s);
+        // }
 
-        Debug.Log("answer: " + answer.Count);
-        foreach(string s in answer){
+        // Debug.Log("answer: " + answer.Count);
+        // foreach(string s in answer){
 
-            Debug.Log(s);
-        }
+        //     Debug.Log(s);
+        // }
         
         if (answer.Count == userAnswer.Count)
         {
@@ -122,24 +136,31 @@ public class submitButton : MonoBehaviour
             result = changeText("Result", "Incorrect");
             StartCoroutine(ClearResult(result));
         }
-        tries--;
+        currentTries--;
         
-        if(!isLost || tries == 0)
+        if(!isLost || currentTries == 0)
         {
             if(!isLost) {
-                SaveState.score += tries;
+                if(table == "molecule_questions"){
+                    SaveState.firstLevel += currentTries + 1;
+                    
+                    Debug.Log("first level: " + SaveState.firstLevel);
+                } else if(table == "image_select_questions"){
+                    SaveState.secondLevel += currentTries + 1;
+                    Debug.Log("second level: " + SaveState.secondLevel);
+                } else if(table == "image_select_questions_last" || table == "molecule_questions_image"){
+                    SaveState.thirdLevel += currentTries + 1;
+                    Debug.Log("third level: " + SaveState.thirdLevel);
+                }
+                
                 result = changeText("Result", "Correct");
-            }
             
+            }
+            currentTries = tries;
             StartCoroutine(ClearResult(result));
             userAnswer.Clear();
             //clear disable the glow on all that have been selected
             unClick();
-            //change nitric acid to formaldehyde
-            //gevorg if you want i guess you can get the question from the db and put it here
-            
-            //change the answer to the next one
-             
             
             Answers.RemoveAt(0);
             Questions.RemoveAt(0);
@@ -153,12 +174,6 @@ public class submitButton : MonoBehaviour
             userAnswer = new ArrayList();
             updateQuestion();
         }
-
-        
-        
-        
-        
-
         IEnumerator ClearResult(Text result)
         {
             yield return new WaitForSeconds(4f);
@@ -175,8 +190,6 @@ public class submitButton : MonoBehaviour
             return result;
         }
     }
-
-    
 
     public void unClick(){
         clicked = GameObject.FindGameObjectsWithTag("Clicked");
@@ -226,9 +239,5 @@ public class submitButton : MonoBehaviour
         //    Debug.Log("Answer: " + s);
         // }
         // Debug.Log("AnswerCount: " + answer.Count);
-        
     }
-
-    
-
 }

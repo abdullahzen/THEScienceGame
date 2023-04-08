@@ -82,7 +82,7 @@ public class GameManager : MonoBehaviour
             startGame.gameObject.SetActive(false);
             options.gameObject.SetActive(false);
             mainMenuCanvas.gameObject.SetActive(false);
-            SceneManager.LoadScene("lobby");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             SceneManager.UnloadScene("MainMenu");
         }            
     }
