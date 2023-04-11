@@ -14,4 +14,5 @@ public static class SaveState
     public static int firstLevelTries = 0;
     public static int secondLevelTries = 0;
     public static int thirdLevelTries = 0;
+    public static string studentId = "";
 }

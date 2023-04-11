@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: c7e3e3299eafeb94ca9e31f50d90c590
   - enabled: 1
+    path: Assets/Scenes/enterStudentInfo.unity
+    guid: 70dbfa70d8a072940a06885bfedc6d84
+  - enabled: 1
     path: Assets/Scenes/newLobbyScene.unity
     guid: 6602bd2c3d14aaf469f5e8f2da012fd5
   - enabled: 1

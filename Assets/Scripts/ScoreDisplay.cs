@@ -14,6 +14,8 @@ public class ScoreDisplay : MonoBehaviour
     private TextMeshProUGUI secondLevelScoreText;
     [SerializeField]
     private TextMeshProUGUI thirdLevelScoreText;
+    [SerializeField]
+    private TextMeshProUGUI studentIdText;
 
 
     // Start is called before the first frame update
@@ -25,6 +27,8 @@ public class ScoreDisplay : MonoBehaviour
         firstLevelScoreText.text = "Level 1: " + SaveState.firstLevel + "/" + SaveState.firstLevelQuestions*SaveState.firstLevelTries;
         secondLevelScoreText.text = "Level 2: " + SaveState.secondLevel + "/" + SaveState.secondLevelQuestions*SaveState.secondLevelTries;
         thirdLevelScoreText.text = "Level 3: " + SaveState.thirdLevel + "/" + SaveState.thirdLevelQuestions*SaveState.thirdLevelTries;
+
+        studentIdText.text = "Student Id: " + SaveState.studentId;
     }
 
     // Update is called once per frame
