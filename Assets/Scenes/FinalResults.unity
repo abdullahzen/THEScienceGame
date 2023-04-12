@@ -1310,7 +1310,7 @@ MonoBehaviour:
   firstLevelScoreText: {fileID: 1632952457}
   secondLevelScoreText: {fileID: 185673111}
   thirdLevelScoreText: {fileID: 299960906}
-  studentIdText: {fileID: 0}
+  studentIdText: {fileID: 236268146}
 --- !u!1 &1617748092
 GameObject:
   m_ObjectHideFlags: 0
