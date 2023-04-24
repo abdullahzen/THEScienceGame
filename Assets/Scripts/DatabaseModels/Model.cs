@@ -17,7 +17,9 @@ public class Model : MonoBehaviour
     public IDbConnection CreateAndOpenDatabase(string tableQuery) 
     {
         // Open a connection to the database.
-        string dbUri = "URI=file:Assets/db/MyDatabase.db"; 
+        string dbUri = "URI=file:" + Application.streamingAssetsPath + "/MyDatabase.db";
+
+        Debug.Log(dbUri);
         IDbConnection dbConnection = new SqliteConnection(dbUri); 
         dbConnection.Open(); 
 

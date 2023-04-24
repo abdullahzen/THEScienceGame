@@ -41,14 +41,5 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FinalResults.unity
     guid: de64b0dd2d4437f49a83be78337875c3
-  - enabled: 0
-    path: Assets/Scenes/MainScene.unity
-    guid: ba7f26abe5a243148b86e2ebfbae8374
-  - enabled: 0
-    path: Assets/Scenes/lobby.unity
-    guid: 3e2efc28221d6fb4584dfe2aeb08f969
-  - enabled: 0
-    path: Assets/Scenes/ShipChosing.unity
-    guid: c77d76740803a464a952b0f3c63a3bad
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: c03518fa6d4a63249a303089b715b84c, type: 2}
