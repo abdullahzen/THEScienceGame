@@ -7,6 +7,10 @@ public class robotScript : MonoBehaviour
 {
     [SerializeField]
     private GameObject player;
+    [SerializeField]
+    private GameObject robotCanvas;
+    [SerializeField]
+    movement playerMovement;
     void Start()
     {
     }
@@ -17,7 +21,9 @@ public class robotScript : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Q))
             {
-                SceneManager.LoadScene("robotDialogue");
+                // SceneManager.LoadScene("robotDialogue");
+                playerMovement.enabled = false;
+                robotCanvas.SetActive(true);
             }
         }
     }

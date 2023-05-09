@@ -10,8 +10,6 @@ public class expiditionScript : MonoBehaviour
     [SerializeField]
     private GameObject resourceButtonToDisable;
     [SerializeField]
-    private GameObject moveOnButtonToDisable;
-    [SerializeField]
     private GameObject mainTextToDisable;
     [SerializeField]
     private GameObject expiditiontextToEnable;
@@ -28,7 +26,6 @@ public class expiditionScript : MonoBehaviour
     {
         button.SetActive(false);
         resourceButtonToDisable.SetActive(false);
-        moveOnButtonToDisable.SetActive(false);
         mainTextToDisable.SetActive(false);
         expiditiontextToEnable.SetActive(true);
         contigencyButtonToEnable.SetActive(true);

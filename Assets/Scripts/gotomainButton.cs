@@ -31,6 +31,5 @@ public class gotomainButton : MonoBehaviour
         mainText.SetActive(true);
         resourceButton.SetActive(true);
         expiditionButton.SetActive(true);
-        moveOnButton.SetActive(true);
     }
 }

@@ -12,7 +12,16 @@ public class yesNoRobotDialog : MonoBehaviour
     private GameObject noTextToEnable;
     [SerializeField]
     private GameObject yesTextToEnable;
-    // Start is called before the first frame update
+    [SerializeField]
+    private Button yesButton;
+    [SerializeField]
+    private Button noButton;
+    [SerializeField]
+    private GameObject closingCanvas;
+    [SerializeField]
+    private movement playerMovement;
+        // Start is called before the first frame update
+
     void Start()
     {
         Button btn = button.GetComponent<Button>();
@@ -35,14 +44,24 @@ public class yesNoRobotDialog : MonoBehaviour
 
     IEnumerator nextSceneCoroutine()
     {
+        yesButton.interactable = false;
+        noButton.interactable = false;
         yield return new WaitForSeconds(3);
         if (yesTextToEnable.activeSelf)
         {
-            SceneManager.LoadScene("newLobbyScene");
+            closingCanvas.SetActive(false);
+            playerMovement.enabled = true;
+            yesTextToEnable.SetActive(false);
         }
         if (noTextToEnable.activeSelf)
         {
-            SceneManager.LoadScene("newLobbyScene");
+            closingCanvas.SetActive(false);
+            playerMovement.enabled = true;
+            noTextToEnable.SetActive(false);
         }
+        yesButton.interactable = true;
+        noButton.interactable = true;
+        
+        
     }
 }

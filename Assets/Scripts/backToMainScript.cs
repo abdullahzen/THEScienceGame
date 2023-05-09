@@ -15,8 +15,6 @@ public class backToMainScript : MonoBehaviour
     private GameObject resourceButtonToEnable;
     [SerializeField]
     private GameObject expiditionButtonToEnable;
-    [SerializeField]
-    private GameObject moveOnButton;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +29,5 @@ public class backToMainScript : MonoBehaviour
         textToEnable.SetActive(true);
         resourceButtonToEnable.SetActive(true);
         expiditionButtonToEnable.SetActive(true);
-        moveOnButton.SetActive(true);
     }
 }
